@@ -1,14 +1,15 @@
-<div class="connexion">
-  <h2>Se connecter</h2>
-  <form action="<?= HOST?>login" method="post">
-    <div class="">
-      <input placeholder="pseudo" type="text" name="pseudo"/>
+<form id="form-login" action="<?= HOST?>stockNewMember" method="post">
+    <div class="form-group">
+      <label for="pseudo">Pseudo</label>
+      <input type="pseudo" class="form-control" name="pseudo" aria-describedby="emailHelp" placeholder="Pseudo" required>
     </div>
-    <div class="">
-      <input placeholder="mot de passe" type="password" name="mdp"/>
+    <div class="form-group">
+      <label for="mdp">Mot de Passe</label>
+      <input type="password" class="form-control" name="mdp"  placeholder="Mot de passe" required>
     </div>
-    <div class="">
-      <input type="submit" value="Envoyer" class="button">
+    <div class="form-group">
+      <label for="exampleInputPassword1">Confirmation mot de passe</label>
+      <input type="password" class="form-control" name="mdp2" placeholder="Mot de passe" required>
     </div>
+      <button type="submit" class="btn btn-primary">Envoi</button>
   </form>
-</div>

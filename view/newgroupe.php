@@ -1,22 +1,19 @@
-<header class="bg-primary text-white">
-  <div class="container text-center">
-    <h1>Welcome to Scrolling Nav</h1>
-    <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
-  </div>
-</header>
+<figure>
+  <img   id="img-banniere" src="/libre/images/img-groupe.jpg"  alt="groupe"/>
+  <figcaption>
+    <div class="container text-center">
+      <h1>Groupes</h1>
+      <p class="lead">La page où sont réunies tous tes groupes</p>
+    </div>
+  </figcaption>
+</figure>
 
 <section id="about">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2>About this page</h2>
-        <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
-        <ul>
-          <li>Clickable nav links that smooth scroll to page sections</li>
-          <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-          <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-          <li>Minimal custom CSS so you are free to explore your own unique design options</li>
-        </ul>
+        <h2>Comment utiliser un groupe ?</h2>
+        <p class="lead">tous nos partage de compte fonctionne par groupe crée ou rejoint un groupe pour partager et utiliser des comptes.</p>
       </div>
     </div>
   </div>
@@ -26,8 +23,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2>Services we offer</h2>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+        <h2>Mes groupes</h2>
+        <?php foreach ($groupes as $groupe): ?>
+        <p><a href="<?= HOST?>showGroupe/id/<?=$groupe->getGroupe_id()?>"><?= $groupe->getGroupe_name()?></a></p>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
@@ -37,39 +36,38 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2>Contact us</h2>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+        <h2>Créer ou rejoindre un groupe</h2>
+        <div id="groupe">
+          <div id="newgroupe">
+            <p>créer un groupe</p>
+            <form class="" action="<?= HOST?>stockNewGroupe" method="post">
+                <div class="form-group">
+                  <label for="pseudo">Nom du groupe</label>
+                  <input type="pseudo" class="form-control" name="groupe" aria-describedby="emailHelp" placeholder="Nom du groupe" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Mot de passe</label>
+                  <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoi</button>
+            </form>
+          </div>
+          <div id="joingroupe">
+            <p>rejoindre un groupe</p>
+            <form action="<?= HOST?>joinGroupe" method="post">
+              <div class="form-group">
+                <label for="pseudo">Nom du groupe</label>
+                <input type="pseudo" class="form-control" name="groupe" aria-describedby="emailHelp" placeholder="Nom du groupe" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Mot de passe</label>
+                <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Envoi</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<div id="groupe">
-  <div id="newgroupe">
-    <h2>créer un groupe</h2>
-    <form class="" action="<?= HOST?>stockNewGroupe" method="post">
-      <div class="">
-        <input placeholder="groupe" type="text" name="groupe"/>
-      </div>
-      <div class="">
-        <input placeholder="mot de passe" type="text" name="mdp"/>
-      </div>
-      <div class="">
-        <input type="submit" value="Envoyer">
-      </div>
-    </form>
-  </div>
-  <div id="joingroupe">
-    <h2>rejoindre un groupe</h2>
-    <form action="<?= HOST?>joinGroupe" method="post">
-      <div class="">
-        <input placeholder="groupe" type="text" name="groupe"/>
-      </div>
-      <div class="">
-        <input placeholder="mot de passe" type="password" name="mdp"/>
-      </div>
-      <div class="">
-        <input type="submit" value="Envoyer" class="button">
-      </div>
-    </form>
-  </div>
-</div>
