@@ -1,0 +1,82 @@
+#hello{
+  margin-top: 8px;
+  margin-left: 40px;
+  color: #9a9da0;
+}
+
+#img-banniere{
+  width: 100%;
+}
+
+/*footer*/
+
+#listfooter {
+  display: flex;
+  background-color: #343a40;
+  color:white;
+}
+
+#listfooter ul{
+  list-style-type: none;
+}
+
+#listplus a{
+  color: white;
+}
+#listplus ,#listreseaux {
+  margin-left: 15%;
+  margin-top: 10px;
+}
+
+.imgfooter{
+  margin-left: 5%;
+  margin-bottom: 3px;
+}
+.reseaux {
+  width: 25px;
+}
+
+/*groupe*/
+#newgroupe{
+  margin-bottom: 5%;
+}
+
+#hd-groupe{
+  background-color: #007bff;
+}
+
+#form-groupe{
+  margin-bottom: 5%;
+}
+
+.account{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-account{
+  max-width: 20%;
+  margin-right: 5%;
+  margin-bottom: 2%;
+}
+
+/*login*/
+
+#form-login{
+  margin: 10%;
+}
+
+@media screen and (min-width: 1600px)
+{
+  body ,h1 ,a{
+    font-size: 1.3em;
+  }
+
+}
+
+@media screen and (max-width: 750px)
+{
+  #listplus{
+    margin-left: 0%;
+  }
+}
